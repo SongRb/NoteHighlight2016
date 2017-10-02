@@ -52,6 +52,7 @@ namespace NoteHighlightAddin
 
         public MainForm(string codeType, string fileName, string selectedText)
         {
+            Application.EnableVisualStyles();
             _codeType = codeType;
             _fileName = fileName;
             InitializeComponent();

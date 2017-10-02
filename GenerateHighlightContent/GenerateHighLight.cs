@@ -64,7 +64,7 @@ namespace GenerateHighlightContent
             if (!File.Exists(outputFileName))
                 throw new FileNotFoundException("Can not find outputFile.");
 
-            File.Delete(inputFileName);
+            //File.Delete(inputFileName);
             return outputFileName;
         }
 

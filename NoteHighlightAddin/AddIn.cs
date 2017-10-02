@@ -57,7 +57,6 @@ namespace NoteHighlightAddin
 		public string GetCustomUI(string RibbonID)
 		{
             return LoadRibbon();
-
         }
 
         private string LoadRibbon()

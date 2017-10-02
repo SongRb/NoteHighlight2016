@@ -1,5 +1,5 @@
 ﻿namespace NoteHighlightAddin
-{ 
+{
     partial class MainForm
     {
         /// <summary>
@@ -32,8 +32,6 @@
             this.btnCodeHighLight = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbx_style = new System.Windows.Forms.ComboBox();
-            this.cbx_Clipboard = new System.Windows.Forms.CheckBox();
-            this.cbx_lineNumber = new System.Windows.Forms.CheckBox();
             this.txtCode = new ICSharpCode.TextEditor.TextEditorControl();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,6 +39,8 @@
             this.btnBackground = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.cbx_lineNumber = new System.Windows.Forms.CheckBox();
+            this.cbx_Clipboard = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -50,11 +50,11 @@
             // 
             this.btnCodeHighLight.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnCodeHighLight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCodeHighLight.Location = new System.Drawing.Point(413, 0);
+            this.btnCodeHighLight.Location = new System.Drawing.Point(417, 0);
             this.btnCodeHighLight.Name = "btnCodeHighLight";
-            this.btnCodeHighLight.Size = new System.Drawing.Size(104, 50);
+            this.btnCodeHighLight.Size = new System.Drawing.Size(100, 50);
             this.btnCodeHighLight.TabIndex = 0;
-            this.btnCodeHighLight.Text = "&OK";
+            this.btnCodeHighLight.Text = "OK-1";
             this.btnCodeHighLight.UseVisualStyleBackColor = true;
             this.btnCodeHighLight.Click += new System.EventHandler(this.btnCodeHighLight_Click);
             // 
@@ -63,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(28, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Style：";
             // 
@@ -72,43 +72,15 @@
             this.cbx_style.FormattingEnabled = true;
             this.cbx_style.Location = new System.Drawing.Point(74, 17);
             this.cbx_style.Name = "cbx_style";
-            this.cbx_style.Size = new System.Drawing.Size(121, 21);
+            this.cbx_style.Size = new System.Drawing.Size(120, 21);
             this.cbx_style.TabIndex = 0;
-            // 
-            // cbx_Clipboard
-            // 
-            this.cbx_Clipboard.AutoSize = true;
-            settings1.BackgroundColor = System.Drawing.Color.White;
-            settings1.HighLightStyle = 0;
-            settings1.SaveOnClipboard = false;
-            settings1.SettingsKey = "";
-            settings1.ShowLineNumber = true;
-            this.cbx_Clipboard.Checked = settings1.SaveOnClipboard;
-            this.cbx_Clipboard.DataBindings.Add(new System.Windows.Forms.Binding("Checked", settings1, "SaveOnClipboard", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbx_Clipboard.Location = new System.Drawing.Point(271, 20);
-            this.cbx_Clipboard.Name = "cbx_Clipboard";
-            this.cbx_Clipboard.Size = new System.Drawing.Size(122, 17);
-            this.cbx_Clipboard.TabIndex = 1;
-            this.cbx_Clipboard.Text = "Copy to Clipboard(&C)";
-            this.cbx_Clipboard.UseVisualStyleBackColor = true;
-            // 
-            // cbx_lineNumber
-            // 
-            this.cbx_lineNumber.AutoSize = true;
-            this.cbx_lineNumber.Checked = settings1.ShowLineNumber;
-            this.cbx_lineNumber.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbx_lineNumber.DataBindings.Add(new System.Windows.Forms.Binding("Checked", settings1, "ShowLineNumber", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbx_lineNumber.Location = new System.Drawing.Point(405, 20);
-            this.cbx_lineNumber.Name = "cbx_lineNumber";
-            this.cbx_lineNumber.Size = new System.Drawing.Size(100, 17);
-            this.cbx_lineNumber.TabIndex = 2;
-            this.cbx_lineNumber.Text = "Line Number(&N)";
-            this.cbx_lineNumber.UseVisualStyleBackColor = true;
             // 
             // txtCode
             // 
+            this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCode.AutoScroll = true;
-            this.txtCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCode.IsReadOnly = false;
             this.txtCode.Location = new System.Drawing.Point(0, 0);
             this.txtCode.Name = "txtCode";
@@ -139,10 +111,10 @@
             // 
             // btnBackground
             // 
-            this.btnBackground.Location = new System.Drawing.Point(9, 2);
-            this.btnBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBackground.Location = new System.Drawing.Point(0, 0);
+            this.btnBackground.Margin = new System.Windows.Forms.Padding(2);
             this.btnBackground.Name = "btnBackground";
-            this.btnBackground.Size = new System.Drawing.Size(79, 41);
+            this.btnBackground.Size = new System.Drawing.Size(100, 50);
             this.btnBackground.TabIndex = 1;
             this.btnBackground.Text = "Box Color";
             this.btnBackground.UseVisualStyleBackColor = true;
@@ -157,6 +129,36 @@
             this.panel3.Size = new System.Drawing.Size(517, 380);
             this.panel3.TabIndex = 0;
             // 
+            // cbx_lineNumber
+            // 
+            this.cbx_lineNumber.AutoSize = true;
+            settings1.BackgroundColor = System.Drawing.Color.White;
+            settings1.HighLightStyle = 0;
+            settings1.SaveOnClipboard = false;
+            settings1.SettingsKey = "";
+            settings1.ShowLineNumber = true;
+            this.cbx_lineNumber.Checked = settings1.ShowLineNumber;
+            this.cbx_lineNumber.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_lineNumber.DataBindings.Add(new System.Windows.Forms.Binding("Checked", settings1, "ShowLineNumber", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbx_lineNumber.Location = new System.Drawing.Point(405, 20);
+            this.cbx_lineNumber.Name = "cbx_lineNumber";
+            this.cbx_lineNumber.Size = new System.Drawing.Size(100, 17);
+            this.cbx_lineNumber.TabIndex = 2;
+            this.cbx_lineNumber.Text = "Line Number(&N)";
+            this.cbx_lineNumber.UseVisualStyleBackColor = true;
+            // 
+            // cbx_Clipboard
+            // 
+            this.cbx_Clipboard.AutoSize = true;
+            this.cbx_Clipboard.Checked = settings1.SaveOnClipboard;
+            this.cbx_Clipboard.DataBindings.Add(new System.Windows.Forms.Binding("Checked", settings1, "SaveOnClipboard", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbx_Clipboard.Location = new System.Drawing.Point(271, 20);
+            this.cbx_Clipboard.Name = "cbx_Clipboard";
+            this.cbx_Clipboard.Size = new System.Drawing.Size(122, 17);
+            this.cbx_Clipboard.TabIndex = 1;
+            this.cbx_Clipboard.Text = "Copy to Clipboard(&C)";
+            this.cbx_Clipboard.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnCodeHighLight;
@@ -168,6 +170,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "NoteHighLight";
+            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CodeForm_FormClosed);
             this.Load += new System.EventHandler(this.CodeForm_Load);
             this.panel1.ResumeLayout(false);
