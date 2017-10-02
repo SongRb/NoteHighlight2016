@@ -24,6 +24,9 @@ namespace GenerateHighlightContent
         /// <summary> 高亮樣式 </summary>
         public string HighLightStyle { get; set; }
 
+        /// <summary> Font </summary>
+        public string Font { get; set; }
+
         /// <summary> 是否顯示行號 </summary>
         public bool ShowLineNumber { get; set; }
 

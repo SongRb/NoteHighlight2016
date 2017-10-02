@@ -20,6 +20,8 @@ namespace GenerateHighlightContent
 
         public string HighLightStyle { get; set; }
 
+        public string Font { get; set; }
+
         public bool ShowLineNumber { get; set; }
 
         public string FileName { get; set; }
@@ -76,6 +78,7 @@ namespace GenerateHighlightContent
             HighLightStyle = parameter.HighLightStyle;
             ShowLineNumber = parameter.ShowLineNumber;
             FileName = parameter.FileName;
+            Font = parameter.Font;
         }
 
         /// <summary> 產生HighLight.exe 所需的參數 </summary>
@@ -94,7 +97,8 @@ namespace GenerateHighlightContent
                 inputFileName = String.Format("\"{0}\"",inputFileName), 
                 outputFileName = String.Format("\"{0}\"",outputFileName),
                 codeType = CodeType,
-                highLightStyle = HighLightStyle
+                highLightStyle = HighLightStyle,
+                font = Font
             });
 
             return arguments;

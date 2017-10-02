@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -36,6 +37,9 @@ namespace NoteHighlightAddin
         //HighLight的樣式
         private string CodeStyle { get { return this.cbx_style.Text; } }
 
+        //Font的樣式
+        private string CodeFont { get { return this.cbx_font.Text; } }
+
         //是否要行號
         private bool IsShowLineNumber { get { return this.cbx_lineNumber.Checked; } }
 
@@ -58,7 +62,12 @@ namespace NoteHighlightAddin
             InitializeComponent();
             LoadThemes();
             txtCode.Text = selectedText;
-
+            InstalledFontCollection installedFontCollection = new InstalledFontCollection();
+            cbx_font.DrawMode = DrawMode.OwnerDrawFixed;
+            foreach (FontFamily f in installedFontCollection.Families)
+            {
+                cbx_font.Items.Add(f.Name);
+            }
         }
 
         private void LoadThemes()
@@ -128,7 +137,8 @@ namespace NoteHighlightAddin
                 CodeType = _codeType,
                 HighLightStyle = CodeStyle,
                 ShowLineNumber = IsShowLineNumber,
-                HighlightColor = BackgroundColor
+                HighlightColor = BackgroundColor,
+                Font = CodeFont
             };
 
             try
@@ -265,5 +275,6 @@ namespace NoteHighlightAddin
                 btnBackground.BackColor = colorDialog1.Color;
             }
         }
+
     }
 }
